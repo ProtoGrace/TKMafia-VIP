@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/32.0">
+    <id>TKMafiaVIP</id>
+    <filename>TKMafiaVIP</filename>
+    <name>TKMafiaVIP</name>
+    <versionNumber>1.0</versionNumber>
+    <initialWindow>
+        <content>vip.swf</content>
+        <title>TKMafia VIP</title>
+        <visible>true</visible>
+        <renderMode>direct</renderMode>
+        <depthAndStencil>true</depthAndStencil>
+    </initialWindow>
+    <supportedProfiles>desktop extendedDesktop</supportedProfiles>
+    <gpuPreference>discrete</gpuPreference>
+</application>

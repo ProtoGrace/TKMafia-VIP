@@ -49,6 +49,8 @@ import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.stage3D.GraphicsFillExtra;
 import kabam.rotmg.ui.model.TabStripModel;
 
+import org.hamcrest.mxml.object.Null;
+
 import org.swiftsuspenders.Injector;
 
 public class Player extends Character {
@@ -500,6 +502,7 @@ public class Player extends Character {
         if(this.bigSkill4) {
             bigSkill = bigSkill - 0.05;
         }
+
         var rateSkill:Number = bigSkill * Number(weaponXML.RateOfFire);
         var rateOfFire:Number = Number(weaponXML.RateOfFire) + rateSkill;
         this.attackPeriod_ = 1 / this.attackFrequency() * (1 / rateOfFire);
@@ -1488,7 +1491,10 @@ public class Player extends Character {
         }
         var rateSkill:Number = bigSkill * Number(weaponXML.RateOfFire);
         var rateOfFire:Number = Number(weaponXML.RateOfFire) + rateSkill;
-        this.attackPeriod_ = 1 / this.attackFrequency() * (1 / rateOfFire);
+        if (!Parameters.data.ROFHack)
+            this.attackPeriod_ = 1 / this.attackFrequency() * (1 / rateOfFire);
+        else
+            this.attackPeriod_ = 0;
         if (time < attackStart_ + this.attackPeriod_) {
             return;
         }

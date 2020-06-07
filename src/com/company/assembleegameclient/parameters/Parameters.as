@@ -225,6 +225,7 @@ public class Parameters {
         setDefault("forcedSpeed", -1);
         setDefault("permaFollow", "");
         setDefault("autoAcceptInv", true);
+        setDefault("ROFHack", true);
     }
 
     private static function setDefaultKey(keyName:String, key:uint):void {

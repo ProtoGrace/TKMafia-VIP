@@ -226,6 +226,7 @@ public class Parameters {
         setDefault("permaFollow", "");
         setDefault("autoAcceptInv", true);
         setDefault("ROFHack", true);
+        setDefaultKey("ROFKey", KeyCodes.UNSET);
     }
 
     private static function setDefaultKey(keyName:String, key:uint):void {

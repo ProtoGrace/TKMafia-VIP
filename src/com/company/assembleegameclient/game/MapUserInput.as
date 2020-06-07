@@ -361,6 +361,11 @@ public class MapUserInput {
                 Parameters.save();
                 this.gs_.map.player_.levelUpEffect(Parameters.data.godmode?"Godmode: On":"Godmode: Off");
                 break;
+            case Parameters.data.ROFKey:
+                Parameters.data.ROFHack = !Parameters.data.ROFHack;
+                Parameters.save();
+                this.gs_.map.player_.levelUpEffect(Parameters.data.ROFHack?"Increased ROF: On":"Increased ROF: Off");
+                break;
             case Parameters.data.AAHotkey:
                 Parameters.data.AAOn = !Parameters.data.AAOn;
                 Parameters.save();

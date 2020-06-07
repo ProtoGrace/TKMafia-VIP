@@ -435,7 +435,7 @@ public class Options extends Sprite {
         this.addOption(new KeyMapper("tqDeathKey","TQ on Death","Teleports to the current quest if it dies"));
         this.addOption(new KeyMapper("noClipKey","No Clip","Toggles whether to no clip"));
         this.addOption(new ChoiceOption("autoAcceptInv",new <String>["On", "Off"],[true,false],"Auto Accept Party","Auto accepts party invites",null));
-        this.addOption(new ChoiceOption("ROFHack",new <String>["On", "Off"],[true,false],"Rate of Fire Increaser","Increases rate of fire immensely" ,null));
+        this.addOption(new KeyMapper("ROFKey","Toggle Rate of Fire","The key which toggles the Rate of Fire hack"));
     }
 
     private function onPlayMusicChange():void {

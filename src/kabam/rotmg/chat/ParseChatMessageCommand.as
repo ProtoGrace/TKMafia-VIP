@@ -244,6 +244,27 @@ public class ParseChatMessageCommand {
                     "Teleported to x = " + match[1] + ", y = " + match[2]));
             return true;
         }
+        match = text.match("^/findobj ('.*')$");
+        if(match != null) {
+            var foundobj:Boolean = false;
+            var objname:String = match[1];
+            var objnameclean:String = objname.substring(1, objname.length-1);
+            this.addTextLine.dispatch(new AddTextLineVO("*Help*", "Trying to find a " + objnameclean));
+
+            for each (target in this.gs.map.goDict_) {
+                if ((target.props_.id_.toLowerCase() == objnameclean.toLowerCase()) && !foundobj) {
+                    this.gs.map.player_.x_ = target.x_;
+                    this.gs.map.player_.y_ = target.y_;
+                    foundobj = true;
+                    this.addTextLine.dispatch(new AddTextLineVO("*Help*", "Teleported to a " + objnameclean + "!"));
+                    return true;
+                }
+            }
+
+            this.addTextLine.dispatch(new AddTextLineVO("*Help*", "Could not find a " + objnameclean + "!"));
+
+            return true;
+        }
         match = text.split(' ');
         if (text.indexOf("/sell") != -1) {
             var items:Vector.<int> = new Vector.<int>();

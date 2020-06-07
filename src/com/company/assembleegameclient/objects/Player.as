@@ -49,8 +49,6 @@ import kabam.rotmg.messaging.impl.GameServerConnection;
 import kabam.rotmg.stage3D.GraphicsFillExtra;
 import kabam.rotmg.ui.model.TabStripModel;
 
-import org.hamcrest.mxml.object.Null;
-
 import org.swiftsuspenders.Injector;
 
 public class Player extends Character {

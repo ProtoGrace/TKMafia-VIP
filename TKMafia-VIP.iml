@@ -4,6 +4,11 @@
     <configurations>
       <configuration name="TKMafia-VIP" target-platform="Desktop" pure-as="true" main-class="WebMain" output-file="vip.swf" output-folder="$MODULE_DIR$/bin">
         <dependencies target-player="32.0">
+          <entries>
+            <entry library-id="c11c7850-8835-44f6-aefe-b6bd2ea6e6e7">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="AIR-SDK" />
         </dependencies>
         <compiler-options>
@@ -25,5 +30,16 @@
     </content>
     <orderEntry type="jdk" jdkName="AIR-SDK" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="c11c7850-8835-44f6-aefe-b6bd2ea6e6e7" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/libs" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

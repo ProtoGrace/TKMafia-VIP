@@ -141,9 +141,7 @@ public class SocketServer {
             if(buffer) {
                 bufferHash = this.sha1.hash(buffer);
                 this.data.writeInt(bufferHash.length);
-                trace("pos10", data.position);
                 this.data.writeBytes(bufferHash);
-                trace("pos11", data.position);
                 buffer.clear();
                 bufferHash.clear();
                 buffer = null;
@@ -154,7 +152,6 @@ public class SocketServer {
                 this.outgoingCipher.encrypt(this.data);
                 this.data.position = 0;
             }
-            trace(this.data.bytesAvailable + 5);
             this.socket.writeInt(this.data.bytesAvailable + 5);
             this.socket.writeByte(msg.id);
             this.socket.writeBytes(this.data);
